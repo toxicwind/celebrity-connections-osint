@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} | Celebrity Connections OSINT</title>
+  <meta name="description" content="{{ description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            dark: { 900: '#0a0a0f', 800: '#12121a', 700: '#1a1a2e', 600: '#16213e' },
+            accent: { red: '#e94560', blue: '#0f3460', purple: '#533483', cyan: '#4ecdc4' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background: #0a0a0f; color: #e0e0e0; }
+    .gradient-text { background: linear-gradient(135deg, #e94560, #533483); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .card { background: #12121a; border: 1px solid #1a1a2e; transition: all 0.3s ease; }
+    .card:hover { border-color: #e94560; transform: translateY(-2px); }
+    .badge-verified { background: rgba(78, 205, 196, 0.15); color: #4ecdc4; border: 1px solid rgba(78, 205, 196, 0.3); }
+    .badge-debunked { background: rgba(233, 69, 96, 0.15); color: #e94560; border: 1px solid rgba(233, 69, 96, 0.3); }
+    .badge-speculative { background: rgba(255, 230, 109, 0.15); color: #ffe66d; border: 1px solid rgba(255, 230, 109, 0.3); }
+    .score-bar { height: 4px; background: #1a1a2e; border-radius: 2px; overflow: hidden; }
+    .score-fill { height: 100%; background: linear-gradient(90deg, #e94560, #533483); border-radius: 2px; }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #e94560; transition: width 0.3s; }
+    .nav-link:hover::after { width: 100%; }
+  </style>
+</head>
+<body class="font-sans min-h-screen">
+  <nav class="sticky top-0 z-50 bg-dark-900/90 backdrop-blur-md border-b border-dark-700">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold gradient-text">CC:OSINT</a>
+      <div class="flex gap-6 text-sm">
+        <a href="/" class="nav-link text-gray-300 hover:text-white">Home</a>
+        <a href="/verified/" class="nav-link text-gray-300 hover:text-white">Verified</a>
+        <a href="/debunked/" class="nav-link text-gray-300 hover:text-white">Debunked</a>
+        <a href="/weird/" class="nav-link text-gray-300 hover:text-white">Weird</a>
+        <a href="/data/" class="nav-link text-gray-300 hover:text-white">Data</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-4 py-8">
+    {{ content | safe }}
+  </main>
+
+  <footer class="border-t border-dark-700 mt-16 py-8">
+    <div class="max-w-6xl mx-auto px-4 text-center text-sm text-gray-500">
+      <p>Built with <a href="https://www.11ty.dev/" class="text-accent-cyan hover:underline">Eleventy</a> 
+      &middot; Data via <a href="https://exa.ai/" class="text-accent-cyan hover:underline">Exa AI</a> 
+      &middot; <a href="https://github.com/toxicwind/celebrity-connections-osint" class="text-accent-cyan hover:underline">GitHub</a></p>
+      <p class="mt-2">CC BY-SA 4.0 &middot; For educational and journalistic purposes only</p>
+    </div>
+  </footer>
+</body>
+</html>
