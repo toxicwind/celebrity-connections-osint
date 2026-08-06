@@ -1,0 +1,100 @@
+---
+layout: layout.njk
+title: Home
+description: Mapping the invisible threads between power, ritual, and celebrity breakdowns through evidence-based OSINT.
+---
+
+<div class="text-center py-16">
+  <h1 class="text-5xl md:text-6xl font-bold mb-6 gradient-text">Celebrity Connections</h1>
+  <p class="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+    A systematic, evidence-based OSINT investigation into the documented connections between 
+    celebrity breakdowns, Jesuit educational networks, spiritual healers, performance artists, 
+    political figures, and ancient ritual practices.
+  </p>
+  <div class="mt-8 flex justify-center gap-4">
+    <a href="/verified/" class="px-6 py-3 bg-accent-red/20 text-accent-red border border-accent-red/40 rounded-lg hover:bg-accent-red/30 transition">Explore Verified Facts</a>
+    <a href="/data/" class="px-6 py-3 bg-dark-700 text-gray-300 border border-dark-600 rounded-lg hover:bg-dark-600 transition">Browse Raw Data</a>
+  </div>
+</div>
+
+<div class="grid md:grid-cols-3 gap-6 mt-12">
+  <div class="card rounded-xl p-6">
+    <div class="text-3xl font-bold text-accent-cyan mb-2">{{ master.verified_facts | length }}</div>
+    <div class="text-gray-400">Verified Facts</div>
+    <div class="text-xs text-gray-500 mt-1">Cross-referenced with S-tier sources</div>
+  </div>
+  <div class="card rounded-xl p-6">
+    <div class="text-3xl font-bold text-accent-red mb-2">{{ master.unverified_or_false | length }}</div>
+    <div class="text-gray-400">Debunked Claims</div>
+    <div class="text-xs text-gray-500 mt-1">Fact-checked and disproven</div>
+  </div>
+  <div class="card rounded-xl p-6">
+    <div class="text-3xl font-bold text-accent-purple mb-2">{{ master.weird_coincidences | length }}</div>
+    <div class="text-gray-400">Weird Coincidences</div>
+    <div class="text-xs text-gray-500 mt-1">Genuinely inexplicable facts</div>
+  </div>
+</div>
+
+<div class="mt-16">
+  <h2 class="text-2xl font-bold mb-6">The Conspiracy Web</h2>
+  <div class="card rounded-xl p-8 font-mono text-sm leading-relaxed overflow-x-auto">
+    <pre class="text-gray-300">
+                    IGNATIUS OF LOYOLA
+                    (Jesuit Founder, 1491-1556)
+                              |
+              +---------------+---------------+
+              |               |               |
+    CASA DE DOM INACIO      GEORGETOWN      YALE SKULL & BONES
+    DE LOYOLA               (Jesuit)        (NOT Jesuit - Puritan)
+    (John of God's Center)
+              |               |
+              +-------+-------+
+                      |
+              JOHN OF GOD
+              (Convicted rapist, 2019)
+                      |
+        +-------------+-------------+
+        |                           |
+    OPRAH                     MARINA ABRAMOVIC
+    (Witnessed surgery,       (Filmed eye surgery
+     promoted)                 with kitchen knife)
+        |
+    CANAAN (son)
+    (Named after ancient land)
+        |
+    PHOENICIA / CANAAN
+    (Child sacrifice to Baal/Tanit)
+    </pre>
+  </div>
+</div>
+
+<div class="mt-12">
+  <h2 class="text-2xl font-bold mb-6">Methodology</h2>
+  <div class="grid md:grid-cols-5 gap-4">
+    <div class="card rounded-lg p-4 text-center">
+      <div class="text-accent-cyan font-bold mb-1">Step 1</div>
+      <div class="text-sm text-gray-400">Exa AI Search</div>
+      <div class="text-xs text-gray-500 mt-1">26 deep queries</div>
+    </div>
+    <div class="card rounded-lg p-4 text-center">
+      <div class="text-accent-cyan font-bold mb-1">Step 2</div>
+      <div class="text-sm text-gray-400">GitHub API</div>
+      <div class="text-xs text-gray-500 mt-1">Repo search</div>
+    </div>
+    <div class="card rounded-lg p-4 text-center">
+      <div class="text-accent-cyan font-bold mb-1">Step 3</div>
+      <div class="text-sm text-gray-400">Article Fetch</div>
+      <div class="text-xs text-gray-500 mt-1">5 full texts</div>
+    </div>
+    <div class="card rounded-lg p-4 text-center">
+      <div class="text-accent-cyan font-bold mb-1">Step 4</div>
+      <div class="text-sm text-gray-400">Cross-Reference</div>
+      <div class="text-xs text-gray-500 mt-1">Source tier scoring</div>
+    </div>
+    <div class="card rounded-lg p-4 text-center">
+      <div class="text-accent-cyan font-bold mb-1">Step 5</div>
+      <div class="text-sm text-gray-400">Disturbing Rank</div>
+      <div class="text-xs text-gray-500 mt-1">Keyword algorithm</div>
+    </div>
+  </div>
+</div>
