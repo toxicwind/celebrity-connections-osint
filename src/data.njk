@@ -1,0 +1,58 @@
+---
+layout: layout.njk
+title: Raw Data
+description: Download and explore the raw JSON data behind this investigation.
+---
+
+<div class="mb-8">
+  <h1 class="text-4xl font-bold gradient-text mb-4">Raw Data</h1>
+  <p class="text-gray-400">All data is available as JSON. Use it for your own analysis, visualizations, or investigations.</p>
+</div>
+
+<div class="grid md:grid-cols-2 gap-6">
+  <div class="card rounded-xl p-6">
+    <h3 class="text-lg font-semibold text-white mb-2">MASTER_SYNTHESIS.json</h3>
+    <p class="text-gray-400 text-sm mb-4">The master document containing all verified facts, debunked claims, and weird coincidences.</p>
+    <a href="https://raw.githubusercontent.com/toxicwind/celebrity-connections-osint/main/data/MASTER_SYNTHESIS.json" 
+       class="text-accent-cyan text-sm hover:underline font-mono">View Raw &rarr;</a>
+  </div>
+  <div class="card rounded-xl p-6">
+    <h3 class="text-lg font-semibold text-white mb-2">Exa Search Results</h3>
+    <p class="text-gray-400 text-sm mb-4">Raw responses from 26 Exa AI API queries across three search waves.</p>
+    <div class="flex gap-4 text-sm font-mono">
+      <a href="https://raw.githubusercontent.com/toxicwind/celebrity-connections-osint/main/data/exa_deep_search_results.json" class="text-accent-cyan hover:underline">Deep</a>
+      <a href="https://raw.githubusercontent.com/toxicwind/celebrity-connections-osint/main/data/exa_weird_results.json" class="text-accent-cyan hover:underline">Weird</a>
+      <a href="https://raw.githubusercontent.com/toxicwind/celebrity-connections-osint/main/data/exa_ultra_weird_results.json" class="text-accent-cyan hover:underline">Ultra</a>
+    </div>
+  </div>
+  <div class="card rounded-xl p-6">
+    <h3 class="text-lg font-semibold text-white mb-2">Disturbing Findings</h3>
+    <p class="text-gray-400 text-sm mb-4">Ranked by keyword-based disturbing score algorithm.</p>
+    <a href="https://raw.githubusercontent.com/toxicwind/celebrity-connections-osint/main/data/disturbing_findings_ranked.json" 
+       class="text-accent-cyan text-sm hover:underline font-mono">View Raw &rarr;</a>
+  </div>
+  <div class="card rounded-xl p-6">
+    <h3 class="text-lg font-semibold text-white mb-2">Fetched Articles</h3>
+    <p class="text-gray-400 text-sm mb-4">Full text content from 5 key articles (AP, NBC, Vice, Hollywood Reporter).</p>
+    <a href="https://raw.githubusercontent.com/toxicwind/celebrity-connections-osint/main/data/fetched_article_content.json" 
+       class="text-accent-cyan text-sm hover:underline font-mono">View Raw &rarr;</a>
+  </div>
+</div>
+
+<div class="mt-12 card rounded-xl p-6">
+  <h3 class="text-lg font-semibold text-white mb-4">Quick Analysis</h3>
+  <pre class="bg-dark-900 rounded-lg p-4 text-sm font-mono text-gray-300 overflow-x-auto">
+# Clone and analyze
+git clone https://github.com/toxicwind/celebrity-connections-osint.git
+cd celebrity-connections-osint
+
+# View all verified facts
+cat data/MASTER_SYNTHESIS.json | jq ".verified_facts[] | {claim, status}"
+
+# Top disturbing findings
+cat data/disturbing_findings_ranked.json | jq ".[:5] | .[] | {score, title}"
+
+# Filter by source tier
+cat data/MASTER_SYNTHESIS.json | jq '.verified_facts[] | select(.sources | contains(["AP News"]))'
+  </pre>
+</div>
