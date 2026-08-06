@@ -1,0 +1,26 @@
+{
+  "name": "celebrity-connections-osint",
+  "version": "1.0.0",
+  "description": "OSINT investigation into celebrity breakdowns, power networks, and verified oddities",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "debug": "DEBUG=* eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toxicwind/celebrity-connections-osint.git"
+  },
+  "keywords": [
+    "osint",
+    "celebrity",
+    "investigation",
+    "data-journalism",
+    "conspiracy-facts"
+  ],
+  "author": "toxicwind",
+  "license": "CC-BY-SA-4.0"
+}
